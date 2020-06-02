@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "178478366828",
+    "firebase_url": "https://flashcall-da1ec.firebaseio.com",
+    "project_id": "flashcall-da1ec",
+    "storage_bucket": "flashcall-da1ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178478366828:android:8abbf044d2c45e2cbf1849",
+        "android_client_info": {
+          "package_name": "com.infinty8.flashcall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178478366828-l0rbhsso73jpc2ni2lm50sus103vf221.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.infinty8.flashcall",
+            "certificate_hash": "8d3bb3b11ecb2abbfa2b31e9f53522c94ad515c5"
+          }
+        },
+        {
+          "client_id": "178478366828-m2rfpuatnpnq8mc70oi4figbldv7174i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpxWwF5mPDSlaaoI9_Z9e7em7pcCwKH3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178478366828-m2rfpuatnpnq8mc70oi4figbldv7174i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.infinty8.flashcall">
+
+    <application
+        android:name="com.infinty8.flashcall.FlashCall"
+        android:allowBackup="true"
+        android:icon="@mipmap/my_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/my_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="LockedOrientationActivity">
+
+        <activity
+            android:name="com.infinty8.flashcall.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.infinty8.flashcall.activity.AppIntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.infinty8.flashcall.activity.AuthenticationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.infinty8.flashcall.activity.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.infinty8.flashcall.activity.MeetingHistoryActivity"
+            android:parentActivityName="com.infinty8.flashcall.activity.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Admob -->
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
