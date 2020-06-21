@@ -1,11 +1,10 @@
 package com.infinty8.flashcall.utils
 
-import com.core.extensions.toast
 import com.infinty8.flashcall.R
 import android.content.Context
-import androidx.annotation.StringRes
 import androidx.core.os.bundleOf
 import com.google.firebase.auth.FirebaseAuth
+import com.infinty8.flashcall.sharedpref.SharedPrefData
 import org.jitsi.meet.sdk.JitsiMeet
 import org.jitsi.meet.sdk.JitsiMeetActivity
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions
@@ -14,8 +13,8 @@ import java.net.URL
 
 object MeetingUtils {
 
-    fun startMeeting(context: Context, meetingCode: String, @StringRes initialToastMessage: Int) {
-        context.toast(context.getString(initialToastMessage))
+    fun startMeeting(context: Context, meetingCode: String) {
+
 
         val serverUrl = URL(context.getString(R.string.app_server_url))
         val defaultOptions = JitsiMeetConferenceOptions.Builder()
@@ -32,17 +31,39 @@ object MeetingUtils {
         val options = JitsiMeetConferenceOptions.Builder()
             .setRoom(meetingCode)
             .setUserInfo(null)
+        val sharedPrefData= SharedPrefData(context)
 
         val currentUser = FirebaseAuth.getInstance().currentUser
-        if (currentUser != null) {
+        if (sharedPrefData.getSkip().equals("Skip"))
+        {
             val userInfoBundle = bundleOf(
-                "displayName" to currentUser.displayName,
-                "email" to currentUser.email,
-                "avatarURL" to currentUser.photoUrl
+                "displayName" to "User Not Sign in",
+                "email" to "Please Sign In",
+                "avatarURL" to R.drawable.ic_account
             )
 
             options.setUserInfo(JitsiMeetUserInfo(userInfoBundle))
         }
+        else
+        {
+            if (currentUser != null) {
+                val userInfoBundle = bundleOf(
+                    "displayName" to sharedPrefData.getName(),
+                    "email" to sharedPrefData.getEmail(),
+                    "avatarURL" to sharedPrefData.getImage()
+                )
+
+                options.setUserInfo(JitsiMeetUserInfo(userInfoBundle))
+            }
+            val userInfoBundle = bundleOf(
+                "displayName" to sharedPrefData.getName() ,
+                "email" to sharedPrefData.getEmail(),
+                "avatarURL" to "http://graph.facebook.com/${sharedPrefData.getAuthId()}/picture?type=square"
+            )
+
+            options.setUserInfo(JitsiMeetUserInfo(userInfoBundle))
+        }
+
 
         JitsiMeetActivity.launch(context, options.build())
     }

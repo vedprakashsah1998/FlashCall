@@ -14,10 +14,8 @@ class MeetingHistoryItem(val meeting: Meeting) :
     override val type: Int
         get() = R.id.fastadapter_meeting_history_item_id
 
-    override fun createBinding(
-        inflater: LayoutInflater,
-        parent: ViewGroup?
-    ): ItemMeetingHistoryBinding {
+    override fun createBinding(inflater: LayoutInflater, parent: ViewGroup?): ItemMeetingHistoryBinding
+    {
         return ItemMeetingHistoryBinding.inflate(inflater, parent, false)
     }
 

@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
         )
         val t = Thread(Runnable {
             try {
-                Thread.sleep(4000)
+                Thread.sleep(3000)
             } catch (e: Exception) {
                 e.printStackTrace()
             } finally {

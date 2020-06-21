@@ -18,16 +18,25 @@
     <string name="authentication_sign_in_google">Sign in with Google</string>
     <string name="authentication_login_canceled">Sign in canceled</string>
 
+    <string name="loginwithfacebook">Log in with Facebook</string>
+    <string name="facebook_app_id">296166898220943</string>
+    <string name="fb_login_protocol_scheme">fb296166898220943</string>
+
+
+
     <string name="main_join_meeting">Join Meeting</string>
     <string name="main_create_meeting">Create Meeting</string>
     <string name="main_meeting_code">Meeting Code</string>
     <string name="main_btn_create_meeting">Create</string>
+    <string name="addmember">Add Member</string>
     <string name="main_enter_meeting_code">Enter Meeting Code</string>
     <string name="main_btn_join_meeting">JOIN</string>
     <string name="main_error_meeting_code_length">Minimum length of meeting code allowed is %1$d</string>
     <string name="main_share_meeting_code_title">Share meeting code via</string>
     <string name="main_meeting_code_copied">Meeting Code copied from Clipboard</string>
     <string name="main_empty_clipboard">No Meeting Code found in the Clipboard</string>
+
+    <string name="AddMember">Add Member</string>
 
     <string name="meeting_history_rejoin">REJOIN</string>
     <string name="meeting_history_last_joined_time">Last joined %1$s</string>

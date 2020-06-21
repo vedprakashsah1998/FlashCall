@@ -190,6 +190,8 @@
             android:inputType="textNoSuggestions"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
     <com.google.android.material.button.MaterialButton
         style="@style/FilledButton"
         android:id="@+id/btnCreateMeeting"
@@ -208,4 +210,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilCodeCreateMeeting" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/addmember"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="8dp"
+        android:id="@+id/addmember"
+        android:visibility="gone"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#4c4981"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateMeeting"
+        app:elevation="8dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

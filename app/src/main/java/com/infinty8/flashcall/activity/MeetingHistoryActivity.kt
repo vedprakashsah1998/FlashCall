@@ -11,9 +11,7 @@ import com.infinty8.flashcall.viewmodel.MeetingHistoryViewModel
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.View
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -97,15 +95,6 @@ class MeetingHistoryActivity : AppCompatActivity() {
         if (itemCount > 0) binding.groupEmpty.makeGone() else binding.groupEmpty.makeVisible()
     }
 
-
-
-    /**
-     * Returns the size of the Adaptive Banner Ad based on the screen width
-     */
-
-    /**
-     * Called when the meeting code is clicked of a RecyclerView Item
-     */
     private fun onMeetingCodeClick() {
         meetingHistoryAdapter.addEventHook(object : ClickEventHook<MeetingHistoryItem>() {
             override fun onBind(viewHolder: RecyclerView.ViewHolder): View? {
@@ -143,9 +132,7 @@ class MeetingHistoryActivity : AppCompatActivity() {
             ) {
                 MeetingUtils.startMeeting(
                     this@MeetingHistoryActivity,
-                    item.meeting.code,
-                    R.string.all_rejoining_meeting
-                ) // Start Meeting
+                    item.meeting.code) // Start Meeting
 
                 viewModel.addMeetingToDb(
                     Meeting(

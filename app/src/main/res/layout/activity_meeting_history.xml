@@ -19,6 +19,7 @@
         android:layout_height="?attr/actionBarSize"
         android:theme="@style/ToolbarTheme"
         app:title="@string/meeting_history_toolbar_title"
+        android:elevation="8dp"
         app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

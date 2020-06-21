@@ -29,7 +29,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
     // AndroidX
-    implementation "androidx.constraintlayout:constraintlayout:$clVersion"
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta7"
 
     // Material theme
     implementation "com.google.android.material:material:$materialThemeVersion"

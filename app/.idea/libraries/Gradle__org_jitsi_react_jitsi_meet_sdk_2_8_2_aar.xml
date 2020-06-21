@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jitsi.react:jitsi-meet-sdk:2.8.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/570f260f461094e061bc570eac5fdfa6/jetified-jitsi-meet-sdk-2.8.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/570f260f461094e061bc570eac5fdfa6/jetified-jitsi-meet-sdk-2.8.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

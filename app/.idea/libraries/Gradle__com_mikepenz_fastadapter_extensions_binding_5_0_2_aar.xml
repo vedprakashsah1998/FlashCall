@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mikepenz:fastadapter-extensions-binding:5.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/510599ec115fc13b12c46174b64e0744/jetified-fastadapter-extensions-binding-5.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/510599ec115fc13b12c46174b64e0744/jetified-fastadapter-extensions-binding-5.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikepenz/fastadapter-extensions-binding/5.0.2/2b44c62b6df7e09dffca6ea4f3ee8d365ef40d11/fastadapter-extensions-binding-5.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikepenz/fastadapter-extensions-binding/5.0.2/a3da86a59245ae1ea73bda44adf3e9fdf47eab56/fastadapter-extensions-binding-5.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

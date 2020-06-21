@@ -13,6 +13,8 @@
         app:srcCompat="@drawable/logo_state"
         android:layout_centerInParent="true"/>
 
+
+
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
