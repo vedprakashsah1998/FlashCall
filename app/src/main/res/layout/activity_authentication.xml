@@ -6,27 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.AuthenticationActivity">
 
-
-
-
-<!--    <com.google.android.material.chip.Chip
-        android:id="@+id/chipSkip"
-        style="@style/Widget.MaterialComponents.Chip.Action"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chipBackgroundColor="@color/transparentColor"
-        android:textColor="#4c4981"
-        app:chipStrokeWidth="1dp"
-        app:chipCornerRadius="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        app:chipStrokeColor="#4c4981"
-        android:text="@string/all_skip"/>-->
-
-
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivLogo"
         android:layout_width="180dp"
@@ -72,22 +51,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
 
+
+
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignInGoogle"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:backgroundTint="#FFFFFFFF"
         android:layout_marginTop="44dp"
         app:elevation="12dp"
-        android:shadowColor="@android:color/black"
+        app:cornerRadius="22dp"
+        app:backgroundTint="#FFFFFF"
         android:layout_marginEnd="16dp"
         android:text="@string/authentication_sign_in_google"
         android:drawableLeft="@drawable/ic_google_login"
         app:layout_constraintBottom_toTopOf="@+id/btnSignInEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:cornerRadius="22dp"
+        android:textAllCaps="true"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@android:color/black"
         app:layout_constraintTop_toBottomOf="@+id/tvAppTagline" />
@@ -125,6 +107,7 @@
         android:text="@string/all_skip"
         app:cornerRadius="22dp"
         app:elevation="12dp"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="12dp"
         app:backgroundTint="#4c4981"
         app:layout_constraintStart_toStartOf="@+id/facebook_login"

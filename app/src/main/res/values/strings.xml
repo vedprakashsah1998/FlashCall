@@ -17,11 +17,11 @@
     <string name="authentication_sign_in_email">Sign in with Email</string>
     <string name="authentication_sign_in_google">Sign in with Google</string>
     <string name="authentication_login_canceled">Sign in canceled</string>
-
+    <string name="home">Home</string>
+    <string name="Profile">Profile</string>
     <string name="loginwithfacebook">Log in with Facebook</string>
     <string name="facebook_app_id">296166898220943</string>
     <string name="fb_login_protocol_scheme">fb296166898220943</string>
-
 
 
     <string name="main_join_meeting">Join Meeting</string>
@@ -67,4 +67,6 @@
     <string name="all_joining_meeting">Please wait, joining meeting</string>
     <string name="all_rejoining_meeting">Please wait, rejoining meeting</string>
     <string name="profile_open_source_licenses">Open Source Licenses</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

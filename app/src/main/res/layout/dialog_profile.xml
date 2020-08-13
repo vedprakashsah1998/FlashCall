@@ -131,6 +131,24 @@
         app:layout_constraintTop_toBottomOf="@+id/dividerDarkMode" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawableStart="@drawable/ic_logo"
+        android:drawablePadding="16dp"
+        android:focusable="true"
+        android:id="@+id/github"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="GitHub Profile"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_size_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSendFeedback"/>
+
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvRateApp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -146,7 +164,7 @@
         android:textSize="@dimen/text_size_s"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSendFeedback" />
+        app:layout_constraintTop_toBottomOf="@+id/github" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvShareApp"

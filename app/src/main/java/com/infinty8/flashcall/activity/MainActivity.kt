@@ -9,6 +9,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.widget.doOnTextChanged
+import androidx.viewpager.widget.ViewPager
 import coil.api.load
 import com.afollestad.materialdialogs.LayoutMode
 import com.afollestad.materialdialogs.MaterialDialog
@@ -29,10 +30,13 @@ import com.facebook.login.LoginManager
 import com.firebase.ui.auth.AuthUI
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.iid.FirebaseInstanceId
 import com.infinty8.flashcall.R
+import com.infinty8.flashcall.adapteritem.DemoFragmentStateAdapter
 import com.infinty8.flashcall.databinding.ActivityMainBinding
 import com.infinty8.flashcall.model.Meeting
 import com.infinty8.flashcall.sharedpref.AppPref
@@ -68,11 +72,62 @@ class MainActivity : AppCompatActivity() {
     private val minMeetingCodeLength = 10
     private var currentUser: FirebaseUser? = null
 
+    /*private val onNavigationItemSeltedListener=BottomNavigationView.OnNavigationItemSelectedListener { item ->
+
+        when (item.itemId)
+        {
+            R.id.home->{
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile->{
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId)
+            {
+                R.id.home->{
+                    binding.viewPager.currentItem=0
+                    true
+                }
+                R.id.profile->{
+                    binding.viewPager.currentItem=1
+                     true
+                }
+            }
+            false
+        }
+
+        val demoFragmentStateAdapter = DemoFragmentStateAdapter(supportFragmentManager)
+        binding.viewPager.adapter = demoFragmentStateAdapter
+
+
+        binding.viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int)
+            {
+
+            }
+
+
+            override fun onPageSelected(position: Int) {
+                binding.bottomNavigationView.menu.getItem(position).isChecked = true
+            }
+        })
+
+
+
 
         currentUser = FirebaseAuth.getInstance().currentUser
         sharedPrefData= SharedPrefData(this)
@@ -83,21 +138,21 @@ class MainActivity : AppCompatActivity() {
         email=intent.extras?.getString("email")
 
 
-
         setProfileIcon()
-        onMeetingToggleChange()
+
+/*
+        onMeetingToggleChange()*/
         updateToken()
-        onCreateMeetingCodeChange()
+/*        onCreateMeetingCodeChange()
         onCopyMeetingCodeFromClipboardClick()
         onShareMeetingCodeClick()
         onJoinMeetingClick()
         onCreateMeetingClick()
         onMeetingHistoryClick()
+ */
         onProfileClick()
 
-
     }
-
 
 
     private fun setProfileIcon() {
@@ -112,7 +167,7 @@ class MainActivity : AppCompatActivity() {
         else{
             if (currentUser != null) {
 
-                    binding.ivProfile.load(sharedPrefData!!.getImage())
+                binding.ivProfile.load(sharedPrefData!!.getImage())
             }
             val requestOptions = RequestOptions()
             requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -160,15 +215,17 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+/*
 
 
 
 
 
 
-    /**
+
+    *//**
      * Called when the meeting toggle button check state is changed
-     */
+     *//*
     private fun onMeetingToggleChange() {
         binding.tgMeeting.addOnButtonCheckedListener { toggleGroup, checkedId, isChecked ->
             if (isChecked) {
@@ -188,9 +245,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
+    *//**
      * Called when the meeting code in the EditText of the CREATE MEETING toggle changes
-     */
+     *//*
     private fun onCreateMeetingCodeChange() {
         binding.tilCodeCreateMeeting.etCodeCreateMeeting.doOnTextChanged { text, start, before, count ->
             if (count >= minMeetingCodeLength) binding.tilCodeCreateMeeting.error = null
@@ -204,9 +261,9 @@ class MainActivity : AppCompatActivity() {
             .joinToString("")
     }
 
-    /**
+    *//**
      * Called when the clipboard icon is clicked in the EditText of the JOIN MEETING toggle
-     */
+     *//*
     private fun onCopyMeetingCodeFromClipboardClick() {
         binding.tilCodeJoinMeeting.setEndIconOnClickListener {
             val clipboardText = getTextFromClipboard()
@@ -219,9 +276,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
+    *//**
      * Called when the share icon is clicked in the EditText of the CREATE MEETING toggle
-     */
+     *//*
     private fun onShareMeetingCodeClick() {
         binding.tilCodeCreateMeeting.setEndIconOnClickListener {
             if (binding.etCodeCreateMeeting.text.toString().length >= minMeetingCodeLength) {
@@ -237,9 +294,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
+    *//**
      * Called when the JOIN button is clicked of the JOIN MEETING toggle
-     */
+     *//*
     private fun onJoinMeetingClick() {
         binding.btnJoinMeeting.setOnClickListener {
             if (binding.etCodeJoinMeeting.text.toString().length >= minMeetingCodeLength) {
@@ -263,9 +320,9 @@ class MainActivity : AppCompatActivity() {
         ) // Add meeting to db
     }
 
-    /**
+    *//**
      * Called when the CREATE button is clicked of the CREATE MEETING toggle
-     */
+     *//*
     private fun onCreateMeetingClick() {
         binding.btnCreateMeeting.setOnClickListener {
             if (binding.etCodeCreateMeeting.text.toString().length >= minMeetingCodeLength) {
@@ -296,6 +353,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    */
     private fun onProfileClick() {
         sharedPrefData= SharedPrefData(this)
         Log.d("joqwhfdo", sharedPrefData!!.getEmail())
@@ -326,7 +384,7 @@ class MainActivity : AppCompatActivity() {
                         ivUserProfileDialog.load(sharedPrefData!!.getImage())
                         Log.d("joqwhfdo", sharedPrefData!!.getEmail())
                         if (sharedPrefData!!.getName()!=null)
-                        tvUserName.text = sharedPrefData!!.getName()
+                            tvUserName.text = sharedPrefData!!.getName()
                         tvEmail.text = sharedPrefData!!.getEmail()
 
                     }
@@ -384,11 +442,11 @@ class MainActivity : AppCompatActivity() {
                 btnUserAuthenticationStatus.setOnClickListener {
                     dismiss()
                     val mySharedPref: SharedPreferences? = context.getSharedPreferences("filename1", 0)
-                        mySharedPref!!.edit().remove("name").commit()
-                        mySharedPref!!.edit().remove("email").commit()
-                        mySharedPref!!.edit().remove("authId").commit()
-                        mySharedPref!!.edit().remove("image").commit()
-                        mySharedPref!!.edit().remove("skip").commit()
+                    mySharedPref!!.edit().remove("name").commit()
+                    mySharedPref!!.edit().remove("email").commit()
+                    mySharedPref!!.edit().remove("authId").commit()
+                    mySharedPref!!.edit().remove("image").commit()
+                    mySharedPref!!.edit().remove("skip").commit()
                     LoginManager.getInstance().logOut()
 
 
@@ -448,6 +506,10 @@ class MainActivity : AppCompatActivity() {
                     openUrl(getString(R.string.app_privacy_policy_url), R.color.colorSurface)
                 }
 
+                github.setOnClickListener{
+                    openUrl("https://github.com/Vedprakash12/FlashCall",R.color.colorSurface)
+                }
+
                 // Terms of Service onClick
                 tvTermsOfService.setOnClickListener {
                     openUrl(getString(R.string.app_terms_of_service_url), R.color.colorSurface)
@@ -478,6 +540,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
 
 
 
